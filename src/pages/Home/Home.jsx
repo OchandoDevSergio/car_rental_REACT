@@ -1,7 +1,8 @@
+import './Home.css'
 
 export const Home = () => {
 
     return (
-        <div>soy Home</div>
+        <div className="home">soy Home</div>
     )
 }

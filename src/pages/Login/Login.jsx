@@ -1,7 +1,8 @@
+import './Login.css'
 
 export const Login = () => {
 
     return (
-        <div>soy Login</div>
+        <div className="login">soy Login</div>
     )
 }

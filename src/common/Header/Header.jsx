@@ -3,6 +3,6 @@ import './Header.css'
 export const Header = () => {
 
     return (
-        <div>soy Header</div>
+        <div className='header'>soy Header</div>
     )
 }

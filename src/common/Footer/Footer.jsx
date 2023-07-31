@@ -3,6 +3,6 @@ import './Footer.css'
 export const Footer = () => {
 
     return (
-        <div>soy Footer</div>
+        <div className='footer'>soy Footer</div>
     )
 }
