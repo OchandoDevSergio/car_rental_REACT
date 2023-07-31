@@ -3,4 +3,11 @@
     width: 100vw;
 
     background-color: darkgray;
+
+    
+    display: flex;
+    justify-content:flex-start;
+    align-items:flex-start;
+
+    flex-wrap: wrap;
 }
