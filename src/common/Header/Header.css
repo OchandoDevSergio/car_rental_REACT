@@ -3,4 +3,26 @@
     width: 100vw;
 
     background-color: cadetblue;
+
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
 }
+
+.buttonClicker {
+
+    margin: 1em;
+
+    color: lightgray;
+    font-weight: bold;
+
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+.buttonClicker:hover {
+
+    transition: 0.2s;
+    color: darkgrey;
+}
+
