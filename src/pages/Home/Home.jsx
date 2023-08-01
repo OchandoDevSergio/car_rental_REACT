@@ -43,6 +43,7 @@ export const Home = () => {
                                     plate={car.plate_number}
                                     model={car.model}
                                     year={car.year}
+                                    picture={car.picture}
                                     car={car}
                                 />
                             )
