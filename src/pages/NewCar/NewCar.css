@@ -2,5 +2,14 @@
     height: 85vh;
     width: 100vw;
 
-    background-color: darkgray;
+    background-color: beige;
+}
+
+.upRow {
+    display:flex;
+
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: space-around;
 }

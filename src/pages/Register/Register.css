@@ -2,5 +2,26 @@
     height: 85vh;
     width: 100vw;
 
-    background-color: darkgray;
+    margin: 0;
+    padding: 0;
+
+    background-color:beige;
+
+}
+
+.upRow {
+    height: 60vh;
+
+    flex: grid;
+}
+
+.downRow {
+    height: 25vh;
+}
+
+.inputRow { 
+    height: 15vh;
+    align-items: center;
+    justify-content: center;
+
 }

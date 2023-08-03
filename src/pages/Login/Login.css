@@ -4,25 +4,30 @@
 
     background-color:beige;
 
-    display: flex;
+    /* display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: center; */
 }
 
-/* .buttonClicker {
+.upRowLogin {
+    height: 30vh;
 
-    margin: 1em;
-
-    color: lightgray;
-    font-weight: bold;
-
-    transition: 0.2s;
-    cursor: pointer;
 }
 
-.buttonClicker:hover {
+.middleRowLogin {
+    height: 25vh;
+    display:flex;
 
-    transition: 0.2s;
-    color: darkgrey;
-} */
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: space-around;
+
+}
+
+.downRowLogin {
+    height: 30vh;
+
+}
+
