@@ -2,5 +2,27 @@
     height: 75vh;
     width: 100vw;
 
-    background-color:darkgreen;
+    background-color:beige;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
+
+/* .buttonClicker {
+
+    margin: 1em;
+
+    color: lightgray;
+    font-weight: bold;
+
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+.buttonClicker:hover {
+
+    transition: 0.2s;
+    color: darkgrey;
+} */
