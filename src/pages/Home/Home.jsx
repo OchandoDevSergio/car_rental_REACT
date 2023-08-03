@@ -54,7 +54,7 @@ export const Home = () => {
 
                 )
 
-                : (<div>en camino</div>)
+                : (<div>data is coming</div>)
             
             }
         </>

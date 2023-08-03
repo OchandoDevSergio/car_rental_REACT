@@ -8,11 +8,11 @@ export const Login = () => {
 
     return (
         <div className="login">
-          <InputMail placeholder="Introduzca su e-mail" />
-          <InputText placeholder="Introduzca su contraseña" />   
+          <InputMail placeholder="Introduce your e-mail" />
+          <InputText placeholder="Introduce your password" />   
           <div className="buttonClicker" >Login</div>
-          <div>En caso de no estar registrado haga click en el boton Registrarse</div>
-          <div className="buttonClicker" onClick={()=>navigate("/register")}>Registrarse</div>
+          <div>If you don't have an acount click on the button to register</div>
+          <div className="buttonClicker" onClick={()=>navigate("/register")}>Register</div>
         </div>
     )
 }

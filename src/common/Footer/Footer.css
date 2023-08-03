@@ -1,6 +1,10 @@
 .footer {
-    height: 10vh;
+    height: 5vh;
     width: 100vw;
 
-    background-color: aqua;
+    background-color: cadetblue;
+
+    display:flex;
+    align-items: center;
+    justify-content: baseline;
 }

@@ -6,10 +6,10 @@ export const NewCar = () => {
 
     return (
         <div className="newCar">
-          <InputText placeholder="Introduzca la matrícula del vehículo" />
-          <InputText placeholder="Introduzca el modelo del vehículo" />   
-          <InputNumber placeholder="Introduzca el año de fabricación del vahículo" />   
-          <InputText placeholder="Introduzca la dirección url de la imágen del vehículo" />   
+          <InputText placeholder="Introduce the plate number" />
+          <InputText placeholder="Introduce the model" />   
+          <InputNumber placeholder="Introduce the year of manufacture" />   
+          <InputText placeholder="Introduce the URL with the picture" />   
         </div>
     )
 }
