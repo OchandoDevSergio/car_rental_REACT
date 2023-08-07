@@ -1,26 +1,80 @@
 
 import './Input.css';
 
-export const InputText = ({placeholder}) => {
+export const Input = ({type, placeholder, name, manejadora}) => {
 
     return (
-    <input type="text" className="defaultInput" placeholder={placeholder} />
+        <input 
+            type={type}
+            placeholder={placeholder}
+            name={name}
+            className='defaultInput'
+            onChange={(e)=> manejadora(e)}
+        />
     )
+
 }
 
-export const InputNumber = ({placeholder}) => {
 
-    return (
-    <input type="number" className="defaultInput" placeholder={placeholder} />
-    )
-}
 
-export const InputMail = ({placeholder}) => {
 
-    return (
-    <input type="email" className="defaultInput" placeholder={placeholder} />
-    )
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// export const InputText = ({placeholder}) => {
+
+//     return (
+//     <input type="text" className="defaultInput" placeholder={placeholder} />
+//     )
+// }
+
+// export const InputNumber = ({placeholder}) => {
+
+//     return (
+//     <input type="number" className="defaultInput" placeholder={placeholder} />
+//     )
+// }
+
+// export const InputMail = ({placeholder}) => {
+
+//     return (
+//     <input type="email" className="defaultInput" placeholder={placeholder} />
+//     )
+// }
 
 
 

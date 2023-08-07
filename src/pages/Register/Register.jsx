@@ -1,4 +1,4 @@
-import { InputMail, InputText, InputNumber } from '../../common/Input/Input'
+import { Input } from '../../common/Input/Input'
 import './Register.css'
 
 export const Register = () => {
@@ -9,27 +9,27 @@ export const Register = () => {
             <div className='col-1'></div>
             <div className='col-5'>
               <div className='row inputRow'>
-                <InputText placeholder="Introduce your name" />
+                <Input placeholder="Introduce your name" />
               </div>
               <div className='row inputRow'>
-                <InputText placeholder="Introduce your surnames" />  
+                <Input placeholder="Introduce your surnames" />  
               </div>
               <div className='row inputRow'>
-                <InputText placeholder="Introduce your DNI" /> 
+                <Input placeholder="Introduce your DNI" /> 
               </div>
               <div className='row inputRow'>
-                <InputMail placeholder="Introduce your e-mail" />
+                <Input placeholder="Introduce your e-mail" />
               </div>
             </div>
             <div className='col-5'>
               <div className='row inputRow'>
-                <InputNumber placeholder="Introduce your phone number" />
+                <Input placeholder="Introduce your phone number" />
               </div>
               <div className='row inputRow'>
-                <InputText placeholder="Introduce your password" />
+                <Input placeholder="Introduce your password" />
               </div>
               <div className='row inputRow'>
-                <InputText placeholder="Repeat your password" />
+                <Input placeholder="Repeat your password" />
               </div>
               <div className='row inputRow'></div>
             </div>
