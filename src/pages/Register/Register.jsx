@@ -9,27 +9,62 @@ export const Register = () => {
             <div className='col-1'></div>
             <div className='col-5'>
               <div className='row inputRow'>
-                <Input placeholder="Introduce your name" />
+                <Input 
+                  type={"text"}
+                  placeholder="Introduce your name"
+                  name={"name"}
+                  className='defaultInput'
+                  onChange={(e)=> manejadora(e)}/>
               </div>
               <div className='row inputRow'>
-                <Input placeholder="Introduce your surnames" />  
+                <Input 
+                  type={"text"}
+                  placeholder="Introduce your surnames"
+                  name={"surnames"}
+                  className='defaultInput'
+                  onChange={(e)=> manejadora(e)}/>  
               </div>
               <div className='row inputRow'>
-                <Input placeholder="Introduce your DNI" /> 
+                <Input 
+                  type={"text"}
+                  placeholder="Introduce your DNI"
+                  name={"DNI"}
+                  className='defaultInput'
+                  onChange={(e)=> manejadora(e)}/> 
               </div>
               <div className='row inputRow'>
-                <Input placeholder="Introduce your e-mail" />
+                <Input
+                  type={"email"}
+                  placeholder="Introduce your e-mail"
+                  name={"email"}
+                  className='defaultInput'
+                  onChange={(e)=> manejadora(e)} />
               </div>
             </div>
             <div className='col-5'>
               <div className='row inputRow'>
-                <Input placeholder="Introduce your phone number" />
+                <Input 
+                  type={"number"}
+                  placeholder="Introduce your phone number"
+                  name={"phone_number"}
+                  className='defaultInput'
+                  onChange={(e)=> manejadora(e)} />
               </div>
               <div className='row inputRow'>
-                <Input placeholder="Introduce your password" />
+                <Input 
+                  type={"password"}
+                  placeholder="Introduce your password"
+                  name={"password"}
+                  className='defaultInput'
+                  onChange={(e)=> manejadora(e)}/>
               </div>
               <div className='row inputRow'>
-                <Input placeholder="Repeat your password" />
+                <Input 
+                  type={"password"}
+                  placeholder="Repeat your password"
+                  name={"password_repeat"}
+                  className='defaultInput'
+                  onChange={(e)=> manejadora(e)}/>
               </div>
               <div className='row inputRow'></div>
             </div>
