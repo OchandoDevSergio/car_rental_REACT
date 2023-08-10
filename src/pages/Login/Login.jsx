@@ -2,17 +2,14 @@ import { Input } from "../../common/Input/Input";
 import { useNavigate } from "react-router-dom";
 import "./Login.css";
 
-import { useState } from 'react';
+import { useState } from "react";
 import { loginUser } from "../../services/apiCalls";
 
 export const Login = () => {
-
-  const [credentials, setCredentials] = useState(
-    {
-      email : "",
-      password: ""
-    }
-  )
+  const [credentials, setCredentials] = useState({
+    email: "",
+    password: "",
+  });
 
   const navigate = useNavigate();
 
@@ -23,18 +20,15 @@ export const Login = () => {
       ...prevState,
       [e.target.name]: e.target.value,
     }));
-  }
+  };
 
   const loginMe = () => {
-
     loginUser(credentials)
-      .then(
-        resultado => {
-          console.log(resultado)
-        }
-      )
-      .catch(error => console.log(error))
-  }
+      .then((resultado) => {
+        console.log(resultado);
+      })
+      .catch((error) => console.log(error));
+  };
 
   return (
     <div className="container-fluid login">
@@ -58,7 +52,9 @@ export const Login = () => {
         />
       </div>
       <div className="row downRowLogin">
-        <div className="buttonClicker" onClick={() => loginMe()}>Login</div>
+        <div className="buttonClicker" onClick={() => loginMe()}>
+          Login
+        </div>
         <div>If you don't have an acount click on the button to register</div>
         <div className="buttonClicker" onClick={() => navigate("/register")}>
           Register

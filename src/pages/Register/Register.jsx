@@ -1,7 +1,53 @@
 import { Input } from '../../common/Input/Input'
 import './Register.css'
 
+import { useState } from "react";
+import { registerUser } from "../../services/apiCalls";
+
+
 export const Register = () => {
+
+  const [registerBody, setRegisterBody] = useState({
+    
+      role_id: 2,
+      name: "",
+      surnames: "",
+      dni: "",
+      email: "",
+      phone: "",
+      password: ""
+  });
+
+  //BINDEO
+  const inputHandler = (e) => {
+
+    setRegisterBody((prevState) => ({
+      ...prevState,
+      [e.target.name]: e.target.value,
+    }));
+  };
+
+  const registerMe = () => {
+    registerUser(registerBody)
+      .then((resultado) => {
+        console.log(resultado);
+      })
+      .catch((error) => console.log(error));
+  };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     return (
         <div className="container-fluid register">
@@ -14,7 +60,7 @@ export const Register = () => {
                   placeholder="Introduce your name"
                   name={"name"}
                   className='defaultInput'
-                  onChange={(e)=> manejadora(e)}/>
+                  manejadora={inputHandler}/>
               </div>
               <div className='row inputRow'>
                 <Input 
@@ -22,15 +68,15 @@ export const Register = () => {
                   placeholder="Introduce your surnames"
                   name={"surnames"}
                   className='defaultInput'
-                  onChange={(e)=> manejadora(e)}/>  
+                  manejadora={inputHandler}/>  
               </div>
               <div className='row inputRow'>
                 <Input 
                   type={"text"}
                   placeholder="Introduce your DNI"
-                  name={"DNI"}
+                  name={"dni"}
                   className='defaultInput'
-                  onChange={(e)=> manejadora(e)}/> 
+                  manejadora={inputHandler}/> 
               </div>
               <div className='row inputRow'>
                 <Input
@@ -38,7 +84,7 @@ export const Register = () => {
                   placeholder="Introduce your e-mail"
                   name={"email"}
                   className='defaultInput'
-                  onChange={(e)=> manejadora(e)} />
+                  manejadora={inputHandler} />
               </div>
             </div>
             <div className='col-5'>
@@ -46,9 +92,9 @@ export const Register = () => {
                 <Input 
                   type={"number"}
                   placeholder="Introduce your phone number"
-                  name={"phone_number"}
+                  name={"phone"}
                   className='defaultInput'
-                  onChange={(e)=> manejadora(e)} />
+                  manejadora={inputHandler} />
               </div>
               <div className='row inputRow'>
                 <Input 
@@ -56,7 +102,7 @@ export const Register = () => {
                   placeholder="Introduce your password"
                   name={"password"}
                   className='defaultInput'
-                  onChange={(e)=> manejadora(e)}/>
+                  manejadora={inputHandler}/>
               </div>
               <div className='row inputRow'>
                 <Input 
@@ -64,14 +110,14 @@ export const Register = () => {
                   placeholder="Repeat your password"
                   name={"password_repeat"}
                   className='defaultInput'
-                  onChange={(e)=> manejadora(e)}/>
+                  manejadora={inputHandler}/>
               </div>
               <div className='row inputRow'></div>
             </div>
             <div className='col-1'></div> 
           </div>   
           <div className='row downRowRegister'>
-            <div className="buttonClicker" >Register</div>
+            <div className="buttonClicker" onClick={() => registerMe()}>Register</div>
           </div>
 
         </div>
