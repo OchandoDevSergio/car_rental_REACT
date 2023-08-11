@@ -29,5 +29,11 @@
 .downRowLogin {
     height: 30vh;
 
+    display:flex;
+    justify-content: center;
 }
 
+.messageBox {
+    display:flex;
+    justify-content: center;
+}

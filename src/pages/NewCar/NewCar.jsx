@@ -2,7 +2,39 @@
 import { Input } from '../../common/Input/Input'
 import './NewCar.css'
 
+import { useState } from "react";
+import { registerCar } from "../../services/apiCalls";
+
 export const NewCar = () => {
+
+  const [newCarBody, setNewCarBody] = useState({
+    
+    plate_number: "",
+    model: "",
+    year: "",
+    picture: ""
+
+});
+
+//BINDEO
+const inputHandler = (e) => {
+
+  setNewCarBody((prevState) => ({
+    ...prevState,
+    [e.target.name]: e.target.value,
+  }));
+
+};
+
+  const registerThisCar = () => {
+
+    registerCar(newCarBody)
+      .then((resultado) => {
+        console.log(resultado);
+      })
+      .catch((error) => console.log(error));
+
+  };
 
     return (
         <div className="container-fluid newCar">
@@ -12,28 +44,28 @@ export const NewCar = () => {
             placeholder="Introduce the plate number"
             name={"plate_number"}
             className='defaultInput'
-            onChange={(e)=> manejadora(e)}/>
+            manejadora={inputHandler}/>
           <Input 
             type={"text"}
             placeholder="Introduce the model"
             name={"model"}
             className='defaultInput'
-            onChange={(e)=> manejadora(e)}/>   
+            manejadora={inputHandler}/>   
           <Input 
             type={"number"}
             placeholder="Introduce the year of manufacture"
             name={"year"}
             className='defaultInput'
-            onChange={(e)=> manejadora(e)}/>   
+            manejadora={inputHandler}/>   
           <Input 
             type={"text"}
             placeholder="Introduce the URL with the picture"
             name={"picture"}
             className='defaultInput'
-            onChange={(e)=> manejadora(e)}/> 
+            manejadora={inputHandler}/> 
           </div>
           <div className='row downRow'>
-            <div className="buttonClicker" >Introduce car</div>
+            <div className="buttonClicker"  onClick={() => registerThisCar()}>Introduce car</div>
           </div>
         </div>
     )

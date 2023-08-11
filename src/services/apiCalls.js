@@ -15,3 +15,8 @@ export const registerUser = async (registerBody) => {
 
     return axios.post(`http://localhost:5000/users`, registerBody)
 }
+
+export const registerCar = async (newCarBody) => {
+
+    return axios.post(`http://localhost:5000/cars`, newCarBody)
+}

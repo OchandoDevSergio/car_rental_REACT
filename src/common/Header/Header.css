@@ -18,6 +18,9 @@
 
     transition: 0.2s;
     cursor: pointer;
+
+    display:flex;
+    justify-content: center;
 }
 
 .buttonClicker:hover {

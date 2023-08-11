@@ -51,20 +51,6 @@ export const Register = () => {
     } else {console.log("los passwords no coinciden")}
   };
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     return (
         <div className="container-fluid register">
           <div className='row upRowRegister'>

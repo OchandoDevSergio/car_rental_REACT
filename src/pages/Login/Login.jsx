@@ -52,13 +52,18 @@ export const Login = () => {
         />
       </div>
       <div className="row downRowLogin">
-        <div className="buttonClicker" onClick={() => loginMe()}>
-          Login
-        </div>
-        <div>If you don't have an acount click on the button to register</div>
-        <div className="buttonClicker" onClick={() => navigate("/register")}>
-          Register
-        </div>
+        <div className="col"></div>
+        <div className="col">
+          <div className="messageBox">If</div>
+          <div className="buttonClicker" onClick={() => loginMe()}>
+            Login
+          </div>
+          <div className="messageBox">If you don't have an acount click on the button to register</div>
+          <div className="buttonClicker" onClick={() => navigate("/register")}>
+            Register
+          </div>
+          </div>
+        <div className="col"></div>
       </div>
     </div>
   );
