@@ -18,21 +18,37 @@ export const Register = () => {
       password: ""
   });
 
+  const [password2, setPassword2] = useState({
+    
+    password_repeat: ""
+});
+
   //BINDEO
   const inputHandler = (e) => {
-
+    // console.log(registerBody.password)
+    // console.log(password2.password_repeat)
     setRegisterBody((prevState) => ({
       ...prevState,
       [e.target.name]: e.target.value,
     }));
+
+    setPassword2((prevState) => ({
+      ...prevState,
+      [e.target.name]: e.target.value,
+    }));
+
   };
 
   const registerMe = () => {
+
+    if (registerBody.password == password2.password_repeat) {
+
     registerUser(registerBody)
       .then((resultado) => {
         console.log(resultado);
       })
       .catch((error) => console.log(error));
+    } else {console.log("los passwords no coinciden")}
   };
 
 

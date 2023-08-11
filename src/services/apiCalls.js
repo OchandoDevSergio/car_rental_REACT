@@ -15,7 +15,3 @@ export const registerUser = async (registerBody) => {
 
     return axios.post(`http://localhost:5000/users`, registerBody)
 }
-//DEBERES...
-
-//CREAR UNA FUNCION QUE REGISTRE VINCULADA AL BACKEND REAL-REGISTRO...LLAMARLA 
-//DESDE REGISTER E IMPLEMENTARLA
