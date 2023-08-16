@@ -5,11 +5,24 @@ import "./Login.css";
 import { useState } from "react";
 import { loginUser } from "../../services/apiCalls";
 
+import jwt_decode from "jwt-decode";
+
+//REDUX......
+//Importo métodos de Redux
+import { useDispatch, useSelector } from "react-redux";
+import { login, userDataCheck } from "../userSlice";
+
 export const Login = () => {
   const [credentials, setCredentials] = useState({
     email: "",
     password: "",
   });
+
+  //Instancia Redux modo LECTURA
+  const dataUserRedux = useSelector(userDataCheck);
+
+  //Instancia Redux en modo ESCRITURA
+  const dispatch = useDispatch();
 
   const navigate = useNavigate();
 
@@ -25,7 +38,16 @@ export const Login = () => {
   const loginMe = () => {
     loginUser(credentials)
       .then((resultado) => {
-        console.log(resultado);
+
+        const userCredentials = {
+          token: resultado.data.token,
+          userData: jwt_decode(resultado.data.token)
+        }
+        //El token ha llegado del backend...ahora lo GUARDO en RDX
+        dispatch(login({ credentials: userCredentials}))
+
+        //Navegamos a home......
+        navigate("/");
       })
       .catch((error) => console.log(error));
   };
