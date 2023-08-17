@@ -5,8 +5,12 @@ import './Profile.css'
 import { useState } from "react";
 import { modifyUser } from "../../services/apiCalls";
 
+import { useSelector } from "react-redux";
+import { userDataCheck } from "../userSlice";
 
 export const Profile = () => {
+
+    const reduxUserData = useSelector(userDataCheck);//modo solo lectur de redux
 
     const [modifyUserBody, setModifyUserBody] = useState({
 
@@ -19,7 +23,7 @@ export const Profile = () => {
     },
       {
                 where: {
-          id: ""
+          id: reduxUserData.credentials.userData.userId 
         }
       });
 
@@ -27,6 +31,7 @@ export const Profile = () => {
     
         password_repeat: ""
     });
+
 //BINDEO
 const inputHandler = (e) => {
     setModifyUserBody((prevState) => ({
