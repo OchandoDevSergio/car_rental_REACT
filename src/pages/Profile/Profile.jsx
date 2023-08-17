@@ -55,10 +55,10 @@ const inputHandler = (e) => {
 
       return (
         <div className="container-fluid register">
+          <div className="Row title">Modify your user data</div>
           <div className='row upRowRegister'>
             <div className='col-1'></div>
             <div className='col-5'>
-                <div>Modify your user data</div>
               <div className='row inputRow'>
                 <Input 
                   type={"text"}
