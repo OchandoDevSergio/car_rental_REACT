@@ -9,3 +9,19 @@
 
 }
 
+.upRow {
+    height: 60vh;
+
+    flex: grid;
+}
+
+.downRow {
+    height: 25vh;
+}
+
+.inputRow { 
+    height: 15vh;
+    align-items: center;
+    justify-content: center;
+
+}
