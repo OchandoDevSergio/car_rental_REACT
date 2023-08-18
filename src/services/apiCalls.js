@@ -21,7 +21,12 @@ export const registerCar = async (newCarBody) => {
     return axios.post(`http://localhost:5000/cars`, newCarBody)
 }
 
-export const modifyUser = async (newCarBody) => {
+export const modifyUser = async (modifyUserBody, userData) => {
 
-    return axios.put(`http://localhost:5000/users`, newCarBody)
+    return axios.put(`http://localhost:5000/users`, modifyUserBody, {
+        headers: {
+          authorization: "Bearer " + userData.token,
+        }
+    })
+ 
 }
