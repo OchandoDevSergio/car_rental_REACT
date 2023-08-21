@@ -15,7 +15,7 @@ export const Header = () => {
   const dispatch = useDispatch();
 
   useEffect(()=>{
-      console.log("emitiendo desde HEADER el valor redux de user data", reduxUserData.credentials)
+      // console.log("soy REDUX con el HEADER .... y cambio a.....", reduxUserData.credentials?.userData?.userName)
   },[reduxUserData]);
 
   return (
@@ -26,7 +26,7 @@ export const Header = () => {
           Home
         </div>
         <div className="buttonClicker" onClick={() => navigate("/profile")}>
-          {reduxUserData.credentials.userData.userName}
+          {reduxUserData.credentials?.userData?.userName}
         </div>
         <div className="buttonClicker" onClick={() => dispatch(userout({credentials: {}}))}>
           log out

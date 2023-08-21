@@ -17,14 +17,19 @@ export const userSlice = createSlice({
           ...state,
           credentials: {}
         }
+      },
+      changeUser: (state, action) => {
+        return {
+          ...state,
+          ...action.payload
+        }
       }
-      
     }
     
 });
 
 //exporto las ACCIONES.....
-export const { login, userout } = userSlice.actions;
+export const { login, userout, changeUser } = userSlice.actions;
 
 export const userDataCheck = (state) => state.user;
 

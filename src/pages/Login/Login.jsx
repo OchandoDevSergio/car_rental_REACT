@@ -2,7 +2,7 @@ import { Input } from "../../common/Input/Input";
 import { useNavigate } from "react-router-dom";
 import "./Login.css";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { loginUser } from "../../services/apiCalls";
 
 import jwt_decode from "jwt-decode";
@@ -20,6 +20,10 @@ export const Login = () => {
 
   //Instancia Redux modo LECTURA
   const dataUserRedux = useSelector(userDataCheck);
+
+  useEffect(()=>{
+    console.log(dataUserRedux, "sdfdddd")
+  },[dataUserRedux])
 
   //Instancia Redux en modo ESCRITURA
   const dispatch = useDispatch();

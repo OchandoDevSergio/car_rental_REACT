@@ -5,10 +5,16 @@ import { useState, useEffect } from "react";
 import { modifyUser } from "../../services/apiCalls";
 
 import { useSelector } from "react-redux";
-import { userDataCheck } from "../userSlice";
+import { useDispatch } from "react-redux";
+import { userDataCheck, changeUser} from "../userSlice";
+import { useNavigate } from "react-router-dom";
 
 export const Profile = () => {
   const reduxUserData = useSelector(userDataCheck); //modo solo lectura de redux
+
+  const dispatch = useDispatch();
+
+  const navigate = useNavigate();
 
   const [modifyUserBody, setModifyUserBody] = useState(
     {
@@ -29,8 +35,9 @@ export const Profile = () => {
 
 
   useEffect(()=>{
-    console.log(reduxUserData)
+    console.log(reduxUserData, "GONORREAAAAAAAAAAA")
   },[reduxUserData]);
+
   //BINDEO
   const inputHandler = (e) => {
     setModifyUserBody((prevState) => ({
@@ -48,7 +55,15 @@ export const Profile = () => {
     if (modifyUserBody.password == password2.password_repeat) {
       modifyUser(modifyUserBody, reduxUserData.credentials)
         .then((resultado) => {
-          console.log(resultado);
+
+          const newUserData = {
+            token: reduxUserData?.credentials?.token,
+            userData: resultado.data.data
+          }
+          
+          dispatch(changeUser({credentials: newUserData}))
+          navigate("/");
+          
         })
         .catch((error) => console.log(error));
     } else {
