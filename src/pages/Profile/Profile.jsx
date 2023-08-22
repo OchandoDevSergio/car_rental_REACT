@@ -80,7 +80,7 @@ export const Profile = () => {
           <div className="row inputRow">
             <Input
               type={"text"}
-              placeholder="Introduce your name"
+              placeholder={reduxUserData.credentials?.userData?.userName}
               name={"name"}
               className="defaultInput"
               manejadora={inputHandler}
@@ -89,7 +89,7 @@ export const Profile = () => {
           <div className="row inputRow">
             <Input
               type={"text"}
-              placeholder="Introduce your surnames"
+              placeholder= {reduxUserData.credentials?.userData?.userSurnames}
               name={"surnames"}
               className="defaultInput"
               manejadora={inputHandler}
@@ -98,7 +98,7 @@ export const Profile = () => {
           <div className="row inputRow">
             <Input
               type={"text"}
-              placeholder="Introduce your DNI"
+              placeholder={reduxUserData.credentials?.userData?.userDni}
               name={"dni"}
               className="defaultInput"
               manejadora={inputHandler}
@@ -107,7 +107,7 @@ export const Profile = () => {
           <div className="row inputRow">
             <Input
               type={"email"}
-              placeholder="Introduce your new e-mail"
+              placeholder={reduxUserData.credentials?.userData?.userEmail}
               name={"email"}
               className="defaultInput"
               manejadora={inputHandler}
@@ -118,7 +118,7 @@ export const Profile = () => {
           <div className="row inputRow">
             <Input
               type={"number"}
-              placeholder="Introduce your phone number"
+              placeholder={reduxUserData.credentials?.userData?.userPhone}
               name={"phone"}
               className="defaultInput"
               manejadora={inputHandler}

@@ -18,6 +18,11 @@ export const Header = () => {
       // console.log("soy REDUX con el HEADER .... y cambio a.....", reduxUserData.credentials?.userData?.userName)
   },[reduxUserData]);
 
+  const logOut = () => {
+    dispatch(userout({credentials: {}}));
+    navigate("/");
+  }
+
   return (
     <div className="header">
       {reduxUserData.credentials.token ? (
@@ -28,7 +33,7 @@ export const Header = () => {
         <div className="buttonClicker" onClick={() => navigate("/profile")}>
           {reduxUserData.credentials?.userData?.userName}
         </div>
-        <div className="buttonClicker" onClick={() => dispatch(userout({credentials: {}}))}>
+        <div className="buttonClicker" onClick={() => logOut()}>
           log out
         </div>
       </>
