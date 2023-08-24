@@ -1,12 +1,13 @@
 
 import './Input.css';
 
-export const Input = ({type, placeholder, name, manejadora}) => {
+export const Input = ({type, value, placeholder, name, manejadora}) => {
 
     return (
         <input 
             type={type}
-            placeholder={placeholder}
+            value={value || ""}
+            placeholder= {placeholder}
             name={name}
             className='defaultInput'
             onChange={(e)=> manejadora(e)}

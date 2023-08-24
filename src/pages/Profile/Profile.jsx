@@ -19,15 +19,28 @@ export const Profile = () => {
   const [modifyUserBody, setModifyUserBody] = useState(
     {
       id: reduxUserData?.credentials?.userData?.userId,
-      name: "",
-      surnames: "",
-      dni: "",
-      email: "",
-      phone: "",
+      name: reduxUserData.credentials?.userData?.userName,
+      surnames: reduxUserData.credentials?.userData?.userSurnames,
+      dni: reduxUserData.credentials?.userData?.userDni,
+      email: reduxUserData.credentials?.userData?.userEmail,
+      phone: reduxUserData.credentials?.userData?.userPhone,
       password: "",
       role_id: reduxUserData?.credentials?.userData?.roleId
     }
   );
+
+  const [modifyUserBodyError, setModifyUserBodyError] = useState(
+      
+    {
+      nameError: "",
+      surnamesError: "",
+      dniError: "",
+      emailError: "",
+      phoneError: "",
+      passwordError: "",
+      password_repeatError: ""
+    }
+  )
 
   const [password2, setPassword2] = useState({
     password_repeat: "",
@@ -35,8 +48,8 @@ export const Profile = () => {
 
 
   useEffect(()=>{
-    console.log(reduxUserData, "GONORREAAAAAAAAAAA")
-  },[reduxUserData]);
+    console.log(modifyUserBody, "GONORREAAAAAAAAAAA")
+  },[modifyUserBody]);
 
   //BINDEO
   const inputHandler = (e) => {
@@ -53,6 +66,17 @@ export const Profile = () => {
 
   const modifyMe = () => {
     if (modifyUserBody.password == password2.password_repeat) {
+
+      for(let check in modifyUserBody){
+        console.log(check);
+        if(modifyUserBody[check] === ""){
+          //está vacio y no dejo continuar.....
+          console.log("fuck you");
+          return;
+        }
+
+
+      }
       modifyUser(modifyUserBody, reduxUserData.credentials)
         .then((resultado) => {
 
@@ -80,67 +104,83 @@ export const Profile = () => {
           <div className="row inputRow">
             <Input
               type={"text"}
-              placeholder={reduxUserData.credentials?.userData?.userName}
+              placeholder=""
+              value={modifyUserBody.name}
               name={"name"}
               className="defaultInput"
               manejadora={inputHandler}
             />
+            {modifyUserBodyError.nameError}
           </div>
           <div className="row inputRow">
             <Input
               type={"text"}
-              placeholder= {reduxUserData.credentials?.userData?.userSurnames}
+              placeholder=""
+              value={modifyUserBody.surnames}
               name={"surnames"}
               className="defaultInput"
               manejadora={inputHandler}
             />
+            {modifyUserBodyError.surnamesError}
           </div>
           <div className="row inputRow">
             <Input
               type={"text"}
-              placeholder={reduxUserData.credentials?.userData?.userDni}
+              placeholder=""
+              value={modifyUserBody.dni}
               name={"dni"}
               className="defaultInput"
               manejadora={inputHandler}
             />
+            {modifyUserBodyError.dniError}
           </div>
           <div className="row inputRow">
             <Input
+
               type={"email"}
-              placeholder={reduxUserData.credentials?.userData?.userEmail}
+              placeholder=""
+              value={modifyUserBody.email}
               name={"email"}
               className="defaultInput"
               manejadora={inputHandler}
             />
+            {modifyUserBodyError.emailError}
           </div>
         </div>
         <div className="col-5">
           <div className="row inputRow">
             <Input
               type={"number"}
-              placeholder={reduxUserData.credentials?.userData?.userPhone}
+              placeholder=""
+              // placeholder={reduxUserData.credentials?.userData?.userPhone}
+              value={modifyUserBody.phone}
               name={"phone"}
               className="defaultInput"
               manejadora={inputHandler}
             />
+            {modifyUserBodyError.phoneError}
           </div>
           <div className="row inputRow">
             <Input
               type={"password"}
               placeholder="Introduce your new password"
+              value={modifyUserBody.password}
               name={"password"}
               className="defaultInput"
               manejadora={inputHandler}
             />
+            {modifyUserBodyError.passwordError}
           </div>
           <div className="row inputRow">
             <Input
               type={"password"}
               placeholder="Repeat your new password"
+              value={modifyUserBody.password_repeat}
               name={"password_repeat"}
               className="defaultInput"
               manejadora={inputHandler}
             />
+            {modifyUserBodyError.password_repeatError}
           </div>
           <div className="row inputRow"></div>
         </div>

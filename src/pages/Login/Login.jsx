@@ -67,12 +67,16 @@ export const Login = () => {
         <Input
           type={"email"}
           placeholder="Introduce your e-mail"
+          value={credentials.email}
+
           name={"email"}
           manejadora={inputHandler}
         />
         <Input
           type={"password"}
           placeholder="Introduce your password"
+          value={credentials.password}
+
           name={"password"}
           manejadora={inputHandler}
         />
