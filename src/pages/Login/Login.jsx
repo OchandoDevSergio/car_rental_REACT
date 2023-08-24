@@ -83,13 +83,12 @@ export const Login = () => {
       </div>
       <div className="row downRowLogin">
         <div className="col"></div>
-        <div className="col">
-          <div className="messageBox">If</div>
-          <div className="buttonClicker" onClick={() => loginMe()}>
+        <div className="col buttons">
+          <div className="buttonBody" onClick={() => loginMe()}>
             Login
           </div>
           <div className="messageBox">If you don't have an acount click on the button to register</div>
-          <div className="buttonClicker" onClick={() => navigate("/register")}>
+          <div className="buttonBody" onClick={() => navigate("/register")}>
             Register
           </div>
           </div>

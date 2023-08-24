@@ -187,7 +187,7 @@ export const Profile = () => {
         <div className="col-1"></div>
       </div>
       <div className="row downRowRegister">
-        <div className="buttonClicker" onClick={() => modifyMe()}>
+        <div className="buttonBody" onClick={() => modifyMe()}>
           Modify
         </div>
       </div>

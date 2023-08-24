@@ -119,7 +119,7 @@ export const Register = () => {
             <div className='col-1'></div> 
           </div>   
           <div className='row downRowRegister'>
-            <div className="buttonClicker" onClick={() => registerMe()}>Register</div>
+            <div className="buttonBody" onClick={() => registerMe()}>Register</div>
           </div>
 
         </div>

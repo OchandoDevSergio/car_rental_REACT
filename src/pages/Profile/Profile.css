@@ -31,3 +31,26 @@
     align-items: center;
     justify-content: center;
 }
+
+.buttonBody {
+    width: 8vw;
+    margin: 1em;
+
+    color: lightgray;
+    background-color:cadetblue;
+    font-weight: bold;
+
+    transition: 0.2s;
+    cursor: pointer;
+
+    display:flex;
+    justify-content: center;
+
+    border-radius: 45% 45% 45% 45%;
+}
+
+.buttonBody:hover {
+
+    transition: 0.2s;
+    color: darkgrey;
+}
