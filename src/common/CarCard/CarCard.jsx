@@ -1,11 +1,23 @@
 
-
 import './CarCard.css';
 
-export const CarCard = ({id, plate, model, year, picture, car}) => {
+import { useNavigate } from "react-router-dom";
+
+import { useDispatch } from "react-redux";
+import { loadCarData } from "../../pages/carSlice";
+
+export const CarCard = ({id, model, year, picture, car}) => {
+
+    const showMe = () =>{
+        const dispatch = useDispatch();
+        //const navigate = useNavigate();
+        dispatch(loadCarData({ carData: car}));
+        console.log("ésta es la carData", carData);
+        //navigate("/showcar");
+    } 
 
     return (
-        <div className='cardDesign' onClick={()=>console.log(car)}>
+        <div className='cardDesign' onClick={()=>showMe(car)}>
             
             {model}
             <img className='picture' src={picture} alt={id}/>
