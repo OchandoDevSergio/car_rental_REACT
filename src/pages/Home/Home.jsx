@@ -30,6 +30,7 @@ export const Home = () => {
             {cars.length > 0 
 
                 ? (<div className='home'>
+                   <div className='row spaceRow'></div>
 
                      {cars.map(
                         car => {

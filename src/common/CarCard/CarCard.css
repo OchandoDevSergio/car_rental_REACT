@@ -4,7 +4,7 @@
     margin: 0;
     padding: 0;
 
-    height: 23vh;
+    height: 30vh;
     width: 13vw;
 
     background-color:azure;
@@ -18,10 +18,21 @@
 
     border-radius: 5% 5% 5% 5%;
     border: 0.1em solid black;
+
+    font-weight: bold;
+
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+.cardDesign:hover {
+
+    transition: 0.2s;
+    color: rgba(169, 169, 169, 0.466);
 }
 
 .picture {
-    height: 12vh;
+    height: 20vh;
     width: 12vw;
 
     border: 0.1em solid black;

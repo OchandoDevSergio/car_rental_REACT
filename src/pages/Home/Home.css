@@ -11,3 +11,8 @@
 
     flex-wrap: wrap;
 }
+
+.spaceRow {
+    height: 5vh;
+    width: 100vw;
+}
