@@ -10,9 +10,11 @@ import { combineReducers } from "redux";
 import { persistReducer } from "redux-persist";
 
 import thunk from "redux-thunk";
+import carSlice from "../pages/carSlice";
 
 const reducers = combineReducers({
   user: userSlice,
+  car: carSlice
 //   appointment: appointmentSlice,
 });
 
