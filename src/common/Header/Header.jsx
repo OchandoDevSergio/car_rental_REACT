@@ -27,27 +27,31 @@ export const Header = () => {
     <div className="header">
       {reduxUserData.credentials.token ? (
         <>
-        <div className="buttonClicker" onClick={() => navigate("/")}>
-          Home
-        </div>
-        <div className="buttonClicker" onClick={() => navigate("/profile")}>
+        <img className="homeButton" src="https://i.ibb.co/4VrXmfC/logoCR.jpg" alt="logo" onClick={() => navigate("/")}/>
+        <div className="spaceDiv"></div>
+        <div className="loginRegisterDiv">        
+          <div className="buttonClicker" onClick={() => navigate("/profile")}>
           {reduxUserData.credentials?.userData?.userName}
-        </div>
-        <div className="buttonClicker" onClick={() => logOut()}>
+          </div>
+          <div className="buttonClicker" onClick={() => logOut()}>
           log out
+          </div>
         </div>
+
       </>
       ) : (
         <>
-          <div className="buttonClicker" onClick={() => navigate("/")}>
-            Home
+          <img className="homeButton" src="https://i.ibb.co/4VrXmfC/logoCR.jpg" alt="logo" onClick={() => navigate("/")}/>
+          <div className="spaceDiv"></div>
+          <div className="loginRegisterDiv">
+            <div className="buttonClicker" onClick={() => navigate("/login")}>
+              Login
+            </div>
+            <div className="buttonClicker" onClick={() => navigate("/register")}>
+              Register
+            </div>
           </div>
-          <div className="buttonClicker" onClick={() => navigate("/login")}>
-            Login
-          </div>
-          <div className="buttonClicker" onClick={() => navigate("/register")}>
-            Register
-          </div>
+
         </>
       )}
     </div>

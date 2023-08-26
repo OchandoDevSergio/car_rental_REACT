@@ -5,8 +5,8 @@
     background-color: cadetblue;
 
     display: flex;
-    justify-content: flex-end;
-    align-items: flex-end;
+    justify-content: space-around;
+    align-items: center;
 }
 
 .buttonClicker {
@@ -29,3 +29,22 @@
     color: darkgrey;
 }
 
+.homeButton {
+    height: 8vh;
+    width: 15vw;
+
+    border: 0.1em solid black;
+    border-radius: 47% 47% 47% 47%;
+
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+.loginRegisterDiv {
+    display: flex;
+    flex-direction: row;
+}
+
+.spaceDiv {
+    width: 60vw;
+}
