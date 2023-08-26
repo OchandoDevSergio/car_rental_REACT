@@ -34,7 +34,7 @@
     width: 15vw;
 
     border: 0.1em solid black;
-    border-radius: 47% 47% 47% 47%;
+    border-radius: 1em;
 
     transition: 0.2s;
     cursor: pointer;
