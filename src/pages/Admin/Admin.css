@@ -1,0 +1,37 @@
+.adminDiv {
+    height: 85vh;
+    width: 100vw;
+
+    background-color:beige;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.buttonAdmin {
+    width: 12vw;
+    margin: 1em;
+
+    color: black;
+    background-color: white;
+    font-weight: bold;
+
+    transition: 0.2s;
+    cursor: pointer;
+
+    display:flex;
+    justify-content: center;
+
+    border: solid cadetblue;
+    border-radius:  10em;
+}
+
+.buttonAdmin:hover {
+
+    transition: 0.2s;
+    color: rgb(92, 89, 89);
+    background-color: whitesmoke;
+    
+}
