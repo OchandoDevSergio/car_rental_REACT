@@ -1,6 +1,4 @@
 
-
-
 import {useEffect, useState} from 'react';
 import { bringCars } from '../../services/apiCalls';
 import { CarCard } from '../../common/CarCard/CarCard';

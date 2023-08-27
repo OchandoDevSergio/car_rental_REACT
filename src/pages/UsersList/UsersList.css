@@ -1,0 +1,18 @@
+.usersList {
+    height: 85vh;
+    width: 100vw;
+
+    background-color: beige;
+
+    
+    display: flex;
+    justify-content:space-around;
+    align-items:flex-start;
+
+    flex-wrap: wrap;
+}
+
+.spaceRow {
+    height: 5vh;
+    width: 100vw;
+}

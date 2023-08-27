@@ -5,6 +5,15 @@ export const bringCars = async () => {
     return await axios.get(`http://localhost:5000/cars`);
 }
 
+export const bringUsers = async (userData) => {
+
+    return await axios.get(`http://localhost:5000/users`, {
+        headers: {
+          authorization: "Bearer " + userData.token,
+        }
+    });
+}
+
 export const loginUser = async (credentials) => {
 
     //aqui es donde enviamos al backend los datos de logueo desde el frontend
