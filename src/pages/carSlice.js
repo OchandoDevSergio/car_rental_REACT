@@ -17,6 +17,8 @@ export const carSlice = createSlice({
 });
 
 //exporto las ACCIONES.....
-export const { loadCarData} = carSlice.actions;
+export const { loadCarData } = carSlice.actions;
+
+export const carDataCheck = (state) => state.car;
 
 export default carSlice.reducer;
