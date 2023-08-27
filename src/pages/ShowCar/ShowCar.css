@@ -8,3 +8,33 @@
     background-color:beige;
 
 }
+
+.showCarRows {
+    height: 20vh;
+}
+
+.carCol {
+    height: 45vh;
+    width: 60vw;
+
+    display:flex;
+    align-items: center;
+    background-color:azure;
+    border: 0.1em solid black;
+    border-radius: 1em;
+}
+
+.carPicture {
+    height: 40vh;
+    width: 40vw;
+
+    background-color: white;
+    border: 0.1em solid black;
+    border-radius: 1em;
+}
+
+.carData {
+    margin-left: 1em;
+    display:flex;
+    flex-direction: column;
+}
