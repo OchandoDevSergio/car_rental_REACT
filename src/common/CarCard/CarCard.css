@@ -28,7 +28,7 @@
 .cardDesign:hover {
 
     transition: 0.2s;
-    color: rgba(169, 169, 169, 0.466);
+    color: rgb(125, 121, 121);
 }
 
 .picture {
