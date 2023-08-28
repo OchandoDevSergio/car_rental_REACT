@@ -7,12 +7,19 @@ export const bringCars = async () => {
 
 export const bringUsers = async (userData) => {
 
+    //console.log("a ver que trae el userdata.token", userData.token);
+
     return await axios.get(`http://localhost:5000/users`, {
         headers: {
           authorization: "Bearer " + userData.token,
         }
     });
 }
+
+// export const bringUsers = async (credentials) => {
+
+//     return await axios.get(`http://localhost:5000/users`, credentials);
+// }
 
 export const loginUser = async (credentials) => {
 

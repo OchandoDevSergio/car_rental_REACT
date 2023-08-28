@@ -65,7 +65,7 @@ const inputHandler = (e) => {
             manejadora={inputHandler}/> 
           </div>
           <div className='row downRow'>
-            <div className="buttonClicker"  onClick={() => registerThisCar()}>Introduce car</div>
+            <div className="buttonBodyCar"  onClick={() => registerThisCar()}>Introduce car</div>
           </div>
         </div>
     )
