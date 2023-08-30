@@ -2,6 +2,8 @@
 import {useEffect, useState} from 'react';
 import { bringUsers } from '../../services/apiCalls';
 import { UserCard } from '../../common/UserCard/UserCard'
+import { useSelector } from "react-redux";
+import { userDataCheck } from "../userSlice";
 import "./UsersList.css";
 
 
@@ -11,12 +13,14 @@ import "./UsersList.css";
 export const UsersList = () => {
     const [users, setUsers] = useState([]);
 
+    const dataUserRedux = useSelector(userDataCheck);
+    console.log("a ver", dataUserRedux);
     useEffect(()=>{
 
         
         if(users.length === 0){
-            //console.log("a ver que trae el userdata.token", userData.token);
-            bringUsers()
+            console.log("a ver que trae el userdata.token", dataUserRedux.credentials);
+            bringUsers(dataUserRedux.credentials)
             .then(
                 resultado => {
                         setUsers(resultado.data.data);

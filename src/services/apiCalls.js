@@ -6,7 +6,7 @@ export const bringCars = async () => {
 }
 
 export const bringUsers = async (userData) => {
-
+    console.log(userData);
     //console.log("a ver que trae el userdata.token", userData.token);
 
     return await axios.get(`http://localhost:5000/users`, {
