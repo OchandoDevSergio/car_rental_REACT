@@ -6,6 +6,7 @@ import { useState } from "react";
 import { registerCar } from "../../services/apiCalls";
 import { useSelector } from "react-redux";
 import { userDataCheck } from "../userSlice";
+import { useNavigate } from "react-router-dom";
 
 export const NewCar = () => {
 
@@ -30,11 +31,16 @@ const inputHandler = (e) => {
 
 };
 
+const navigate = useNavigate();
+
   const registerThisCar = () => {
 
     registerCar(newCarBody, dataUserRedux.credentials)
+    
+
       .then((resultado) => {
         console.log(resultado);
+        navigate("/")
       })
       .catch((error) => console.log(error));
 
