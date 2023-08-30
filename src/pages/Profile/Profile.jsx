@@ -71,7 +71,6 @@ export const Profile = () => {
         console.log(check);
         if(modifyUserBody[check] === ""){
           //está vacio y no dejo continuar.....
-          console.log("fuck you");
           return;
         }
 
