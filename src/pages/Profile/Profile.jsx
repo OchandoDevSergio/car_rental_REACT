@@ -94,6 +94,16 @@ export const Profile = () => {
     }
   };
 
+      //Inicializamos o instanciamos REDUX en modo lectura
+      const datosReduxUser = useSelector(userDataCheck);
+
+      useEffect(()=> {
+  
+          if((datosReduxUser.credentials?.userData?.roleId !== 1)&&(datosReduxUser.credentials?.userData?.roleId !== 2)){
+              navigate("/");
+          }
+      }, [datosReduxUser]);  
+
   return (
     <div className="container-fluid register">
       <div className="Row title">Modify your user data</div>

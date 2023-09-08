@@ -32,6 +32,16 @@ export const UsersList = () => {
         }
     },[users]);
 
+    useEffect(()=> {
+
+        if(dataUserRedux.credentials?.userData?.roleId !== 1){
+            navigate("/");
+        } else if (dataUserRedux ){
+            navigate("/");
+        }
+    }, [datosReduxUser]);
+
+
     return (
         <>
             {users.length > 0 

@@ -2,7 +2,7 @@
 import { Input } from '../../common/Input/Input'
 import './NewCar.css'
 
-import { useState } from "react";
+import { useState,  useEffect } from "react";
 import { registerCar } from "../../services/apiCalls";
 import { useSelector } from "react-redux";
 import { userDataCheck } from "../userSlice";
@@ -45,6 +45,16 @@ const navigate = useNavigate();
       .catch((error) => console.log(error));
 
   };
+
+    //Inicializamos o instanciamos REDUX en modo lectura
+    const datosReduxUser = useSelector(userDataCheck);
+
+    useEffect(()=> {
+
+        if(datosReduxUser.credentials?.userData?.roleId !== 1){
+            navigate("/");
+        }
+    }, [datosReduxUser]);
 
     return (
         <div className="container-fluid newCar">

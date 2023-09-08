@@ -1,9 +1,24 @@
 import "./Admin.css";
 import { useNavigate } from "react-router-dom";
 
+import { useState, useEffect} from 'react';
+
+import { useSelector } from "react-redux";
+import { userDataCheck } from "../userSlice";
+
 export const Admin = () => {
 
     const navigate = useNavigate();
+
+    //Inicializamos o instanciamos REDUX en modo lectura
+    const datosReduxUser = useSelector(userDataCheck);
+
+    useEffect(()=> {
+
+        if(datosReduxUser.credentials?.userData?.roleId !== 1){
+            navigate("/");
+        }
+    }, [datosReduxUser]);
 
     return (
         <div className="adminDiv">
