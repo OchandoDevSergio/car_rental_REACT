@@ -1,7 +1,7 @@
 import { Input } from '../../common/Input/Input'
 import './Register.css'
 
-import { useState } from "react";
+import { useState, useEffect} from "react";
 import { registerUser } from "../../services/apiCalls";
 
 
@@ -50,6 +50,8 @@ export const Register = () => {
       .catch((error) => console.log(error));
     } else {console.log("los passwords no coinciden")}
   };
+
+
 
     return (
         <div className="container-fluid register">

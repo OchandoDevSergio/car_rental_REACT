@@ -4,6 +4,7 @@ import { bringUsers } from '../../services/apiCalls';
 import { UserCard } from '../../common/UserCard/UserCard'
 import { useSelector } from "react-redux";
 import { userDataCheck } from "../userSlice";
+import { useNavigate } from "react-router-dom";
 import "./UsersList.css";
 
 
@@ -32,11 +33,14 @@ export const UsersList = () => {
         }
     },[users]);
 
+    const datosReduxUser = useSelector(userDataCheck);
+    const navigate = useNavigate();
+
     useEffect(()=> {
 
-        if(dataUserRedux.credentials?.userData?.roleId !== 1){
+        if(datosReduxUser.credentials?.userData?.roleId !== 1){
             navigate("/");
-        } else if (dataUserRedux ){
+        } else if (datosReduxUser.length === 0 ){
             navigate("/");
         }
     }, [datosReduxUser]);
