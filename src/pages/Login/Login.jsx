@@ -56,6 +56,17 @@ export const Login = () => {
       .catch((error) => console.log(error));
   };
 
+  const datosReduxUser = useSelector(userDataCheck);
+console.log("estos son los datos", datosReduxUser);
+  useEffect(()=> {
+    //if (datosReduxUser.length !== 0){navigate("/");}
+      if (datosReduxUser.credentials?.userData?.roleId == 1 ){
+          navigate("/");
+        } else if (datosReduxUser.credentials?.userData?.roleId == 2 ){
+          navigate("/");
+        }
+  }, [datosReduxUser]);
+
   return (
     <div className="container-fluid login">
       {/* <pre>{JSON.stringify(credentials, null,2)}</pre> */}
