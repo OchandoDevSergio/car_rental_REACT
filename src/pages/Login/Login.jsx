@@ -57,7 +57,7 @@ export const Login = () => {
   };
 
   const datosReduxUser = useSelector(userDataCheck);
-console.log("estos son los datos", datosReduxUser);
+  //console.log("estos son los datos", datosReduxUser);
   useEffect(()=> {
     //if (datosReduxUser.length !== 0){navigate("/");}
       if (datosReduxUser.credentials?.userData?.roleId == 1 ){

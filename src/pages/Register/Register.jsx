@@ -3,6 +3,9 @@ import './Register.css'
 
 import { useState, useEffect} from "react";
 import { registerUser } from "../../services/apiCalls";
+import { userDataCheck } from "../userSlice";
+import { useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 
 export const Register = () => {
@@ -51,7 +54,16 @@ export const Register = () => {
     } else {console.log("los passwords no coinciden")}
   };
 
-
+  const datosReduxUser = useSelector(userDataCheck);
+  const navigate = useNavigate();
+  useEffect(()=> {
+    //if (datosReduxUser.length !== 0){navigate("/");}
+      if (datosReduxUser.credentials?.userData?.roleId == 1 ){
+          navigate("/");
+        } else if (datosReduxUser.credentials?.userData?.roleId == 2 ){
+          navigate("/");
+        }
+  }, [datosReduxUser]);
 
     return (
         <div className="container-fluid register">
