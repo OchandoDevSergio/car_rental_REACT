@@ -5,7 +5,7 @@
     margin: 0;
     padding: 0;
 
-    background-color:beige;
+    background-color:white;
 
 }
 
@@ -44,7 +44,7 @@
     display:flex;
     justify-content: center;
 
-    border: solid cadetblue;
+    border: solid steelblue;
     border-radius:  10em;
 }
 

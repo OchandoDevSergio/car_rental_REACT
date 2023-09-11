@@ -51,10 +51,10 @@ export const Header = () => {
         alt="logo"
         onClick={() => navigate("/")}
       />
-      <div className="spaceDiv"></div>
+      <div className="spaceDivHeader"></div>
       <Input
         type={"text"}
-        placeholder=""
+        placeholder="Search cars by brand or model"
         value={criteria}
         name={"criteria"}
         className="defaultInput"

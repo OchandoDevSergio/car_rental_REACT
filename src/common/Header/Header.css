@@ -2,7 +2,7 @@
     height: 10vh;
     width: 100vw;
 
-    background-color: cadetblue;
+    background-color:steelblue;
 
     display: flex;
     justify-content: space-around;
@@ -45,6 +45,6 @@
     flex-direction: row;
 }
 
-.spaceDiv {
-    width: 60vw;
+.spaceDivHeader {
+    width: 30vw;
 }
