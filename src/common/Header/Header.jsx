@@ -54,7 +54,7 @@ export const Header = () => {
       <div className="spaceDivHeader"></div>
       <Input
         type={"text"}
-        placeholder="Search cars by brand or model"
+        placeholder="Search cars by brand"
         value={criteria}
         name={"criteria"}
         className="defaultInput"
