@@ -6,13 +6,15 @@ import { userDataCheck, userout } from "../../pages/userSlice";
 import { useEffect, useState } from "react";
 import { Input } from "../Input/Input";
 import { searchCriteria } from "../../services/apiCalls";
+import { loadCarData } from "../../pages/carSlice";
+import { carDataCheck } from "../../pages/carSlice";
 export const Header = () => {
   //Instanciamos useNavigate dentro de navigate para poder navegar
   const navigate = useNavigate();
 
-  //Instanciamos Redux en modo LECTURA
-  const reduxUserData = useSelector(userDataCheck);
-
+  //instanciamos la lectura
+  const rdxCarData = useSelector(carDataCheck);
+  const reduxUserData = useSelector(userDataCheck); 
   //Instanciamos Redux en modo ESCRITURA
   const dispatch = useDispatch();
 
@@ -27,6 +29,10 @@ export const Header = () => {
     navigate("/");
   };
 
+  const searchCars = (cars) =>{
+    dispatch(loadCarData({ carData: cars}));
+  }; 
+
   const inputHandler = (e) => {
     setCriteria(e.target.value);
   };
@@ -36,7 +42,9 @@ export const Header = () => {
       searchCriteria(criteria)
         .then(
           results => {
-            console.log(results)
+            //console.log("éstos son los resultados de la búsqueda", results);
+            searchCars(results);
+            //console.log("esto es carData", rdxCarData);
           }
         )
         .catch(error => console.log(error));

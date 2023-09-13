@@ -2,6 +2,8 @@
 import {useEffect, useState} from 'react';
 import { bringCars } from '../../services/apiCalls';
 import { CarCard } from '../../common/CarCard/CarCard';
+import { useSelector } from "react-redux";
+import { carDataCheck } from "../../pages/carSlice";
 import './Home.css'
 
 export const Home = () => {
@@ -23,9 +25,43 @@ export const Home = () => {
         }
     },[cars]);
 
+  //instanciamos la lectura
+  const rdxCarData = useSelector(carDataCheck);
+  useEffect(()=>{
+  console.log("este es el rdxCarData en Home", rdxCarData);
+  },[rdxCarData]);
     return (
         <>
-            {cars.length > 0 
+        {rdxCarData.carData.data.data.length > 0 
+
+            ? (<div className='home'>
+            <div className='row spaceRow'></div>
+
+              {rdxCarData.carData.data.data.map(
+                 car => {
+                     return (
+                         <CarCard
+                         
+                             // Key es siempre una palabra reservada en React
+                             key={car.id}
+                             ////////////////////////////////
+                             id={car.id}
+                             plate={car.plate_number}
+                             model={car.model}
+                             year={car.year}
+                             picture={car.picture}
+                             car={car}
+                         />
+                     )
+                 }
+             )}
+
+         </div>
+
+         )
+
+            : (
+                cars.length > 0 
 
                 ? (<div className='home'>
                    <div className='row spaceRow'></div>
@@ -49,13 +85,10 @@ export const Home = () => {
                         }
                     )}
 
-                </div>
-
-                )
+                </div>)
 
                 : (<div>data is coming</div>)
-            
-            }
+            )}
         </>
     )
 }
