@@ -64,7 +64,7 @@ export const Header = () => {
         <>
           <div className="loginRegisterDiv">
             {reduxUserData.credentials.userData.roleId === 1 && (
-              //Este && haría referencia a un entonces.....
+              //Este && haría referencia a un entonces
 
               <div className="buttonClicker" onClick={() => navigate("/admin")}>
                 Admin
