@@ -6,50 +6,45 @@ import { modifyUser } from "../../services/apiCalls";
 
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
-import { userDataCheck, changeUser} from "../userSlice";
+import { userDataCheck, changeUser } from "../userSlice";
 import { useNavigate } from "react-router-dom";
 
 export const Profile = () => {
-  const reduxUserData = useSelector(userDataCheck); //modo solo lectura de redux
+  //Instanciamos REDUX en modo lectura
+  const reduxUserData = useSelector(userDataCheck);
 
   const dispatch = useDispatch();
 
   const navigate = useNavigate();
 
-  const [modifyUserBody, setModifyUserBody] = useState(
-    {
-      id: reduxUserData?.credentials?.userData?.userId,
-      name: reduxUserData.credentials?.userData?.userName,
-      surnames: reduxUserData.credentials?.userData?.userSurnames,
-      dni: reduxUserData.credentials?.userData?.userDni,
-      email: reduxUserData.credentials?.userData?.userEmail,
-      phone: reduxUserData.credentials?.userData?.userPhone,
-      password: "",
-      role_id: reduxUserData?.credentials?.userData?.roleId
-    }
-  );
+  const [modifyUserBody, setModifyUserBody] = useState({
+    id: reduxUserData?.credentials?.userData?.userId,
+    name: reduxUserData.credentials?.userData?.userName,
+    surnames: reduxUserData.credentials?.userData?.userSurnames,
+    dni: reduxUserData.credentials?.userData?.userDni,
+    email: reduxUserData.credentials?.userData?.userEmail,
+    phone: reduxUserData.credentials?.userData?.userPhone,
+    password: "",
+    role_id: reduxUserData?.credentials?.userData?.roleId,
+  });
 
-  const [modifyUserBodyError, setModifyUserBodyError] = useState(
-      
-    {
-      nameError: "",
-      surnamesError: "",
-      dniError: "",
-      emailError: "",
-      phoneError: "",
-      passwordError: "",
-      password_repeatError: ""
-    }
-  )
+  const [modifyUserBodyError, setModifyUserBodyError] = useState({
+    nameError: "",
+    surnamesError: "",
+    dniError: "",
+    emailError: "",
+    phoneError: "",
+    passwordError: "",
+    password_repeatError: "",
+  });
 
   const [password2, setPassword2] = useState({
     password_repeat: "",
   });
 
-
-  useEffect(()=>{
-    console.log(modifyUserBody, "GONORREAAAAAAAAAAA")
-  },[modifyUserBody]);
+  useEffect(() => {
+    console.log(modifyUserBody, "GONORREAAAAAAAAAAA");
+  }, [modifyUserBody]);
 
   //BINDEO
   const inputHandler = (e) => {
@@ -66,27 +61,22 @@ export const Profile = () => {
 
   const modifyMe = () => {
     if (modifyUserBody.password == password2.password_repeat) {
-
-      for(let check in modifyUserBody){
+      for (let check in modifyUserBody) {
         console.log(check);
-        if(modifyUserBody[check] === ""){
-          //está vacio y no dejo continuar.....
+        if (modifyUserBody[check] === "") {
+          //Al encontrar un string vacío no dejo continuar, remito al return
           return;
         }
-
-
       }
       modifyUser(modifyUserBody, reduxUserData.credentials)
         .then((resultado) => {
-
           const newUserData = {
             token: reduxUserData?.credentials?.token,
-            userData: resultado.data.data
-          }
-          
-          dispatch(changeUser({credentials: newUserData}))
+            userData: resultado.data.data,
+          };
+
+          dispatch(changeUser({ credentials: newUserData }));
           navigate("/");
-          
         })
         .catch((error) => console.log(error));
     } else {
@@ -94,15 +84,17 @@ export const Profile = () => {
     }
   };
 
-      //Inicializamos o instanciamos REDUX en modo lectura
-      const datosReduxUser = useSelector(userDataCheck);
+  //Inicializamos o instanciamos REDUX en modo lectura
+  const datosReduxUser = useSelector(userDataCheck);
 
-      useEffect(()=> {
-  
-          if((datosReduxUser.credentials?.userData?.roleId !== 1)&&(datosReduxUser.credentials?.userData?.roleId !== 2)){
-              navigate("/");
-          }
-      }, [datosReduxUser]);  
+  useEffect(() => {
+    if (
+      datosReduxUser.credentials?.userData?.roleId !== 1 &&
+      datosReduxUser.credentials?.userData?.roleId !== 2
+    ) {
+      navigate("/");
+    }
+  }, [datosReduxUser]);
 
   return (
     <div className="container-fluid register">
@@ -145,7 +137,6 @@ export const Profile = () => {
           </div>
           <div className="row inputRow">
             <Input
-
               type={"email"}
               placeholder=""
               value={modifyUserBody.email}
@@ -161,7 +152,6 @@ export const Profile = () => {
             <Input
               type={"number"}
               placeholder=""
-              // placeholder={reduxUserData.credentials?.userData?.userPhone}
               value={modifyUserBody.phone}
               name={"phone"}
               className="defaultInput"

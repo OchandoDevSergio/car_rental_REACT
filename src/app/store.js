@@ -14,8 +14,8 @@ import carSlice from "../pages/carSlice";
 
 const reducers = combineReducers({
   user: userSlice,
-  car: carSlice
-//   appointment: appointmentSlice,
+  car: carSlice,
+  //   appointment: appointmentSlice,
 });
 
 const persistConfig = {

@@ -1,8 +1,5 @@
-import './Footer.css'
+import "./Footer.css";
 
 export const Footer = () => {
-
-    return (
-        <div className='footer'>Copyright 2023</div>
-    )
-}
+  return <div className="footer">Copyright 2023</div>;
+};

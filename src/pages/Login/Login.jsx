@@ -7,8 +7,6 @@ import { loginUser } from "../../services/apiCalls";
 
 import jwt_decode from "jwt-decode";
 
-//REDUX......
-//Importo métodos de Redux
 import { useDispatch, useSelector } from "react-redux";
 import { login, userDataCheck } from "../userSlice";
 
@@ -21,9 +19,9 @@ export const Login = () => {
   //Instancia Redux modo LECTURA
   const dataUserRedux = useSelector(userDataCheck);
 
-  useEffect(()=>{
-    console.log(dataUserRedux, "sdfdddd")
-  },[dataUserRedux])
+  useEffect(() => {
+    console.log(dataUserRedux, "sdfdddd");
+  }, [dataUserRedux]);
 
   //Instancia Redux en modo ESCRITURA
   const dispatch = useDispatch();
@@ -31,7 +29,7 @@ export const Login = () => {
   const navigate = useNavigate();
 
   const inputHandler = (e) => {
-    //bindeo...
+    //Bindeo
 
     setCredentials((prevState) => ({
       ...prevState,
@@ -42,29 +40,26 @@ export const Login = () => {
   const loginMe = () => {
     loginUser(credentials)
       .then((resultado) => {
-
         const userCredentials = {
           token: resultado.data.token,
-          userData: jwt_decode(resultado.data.token)
-        }
-        //El token ha llegado del backend...ahora lo GUARDO en RDX
-        dispatch(login({ credentials: userCredentials}))
+          userData: jwt_decode(resultado.data.token),
+        };
 
-        //Navegamos a home......
+        dispatch(login({ credentials: userCredentials }));
+
         navigate("/");
       })
       .catch((error) => console.log(error));
   };
 
   const datosReduxUser = useSelector(userDataCheck);
-  //console.log("estos son los datos", datosReduxUser);
-  useEffect(()=> {
-    //if (datosReduxUser.length !== 0){navigate("/");}
-      if (datosReduxUser.credentials?.userData?.roleId == 1 ){
-          navigate("/");
-        } else if (datosReduxUser.credentials?.userData?.roleId == 2 ){
-          navigate("/");
-        }
+
+  useEffect(() => {
+    if (datosReduxUser.credentials?.userData?.roleId == 1) {
+      navigate("/");
+    } else if (datosReduxUser.credentials?.userData?.roleId == 2) {
+      navigate("/");
+    }
   }, [datosReduxUser]);
 
   return (
@@ -79,7 +74,6 @@ export const Login = () => {
           type={"email"}
           placeholder="Introduce your e-mail"
           value={credentials.email}
-
           name={"email"}
           manejadora={inputHandler}
         />
@@ -87,7 +81,6 @@ export const Login = () => {
           type={"password"}
           placeholder="Introduce your password"
           value={credentials.password}
-
           name={"password"}
           manejadora={inputHandler}
         />
@@ -98,11 +91,13 @@ export const Login = () => {
           <div className="buttonBody" onClick={() => loginMe()}>
             Login
           </div>
-          <div className="messageBox">If you don't have an acount click on the button to register</div>
+          <div className="messageBox">
+            If you don't have an acount click on the button to register
+          </div>
           <div className="buttonBody" onClick={() => navigate("/register")}>
             Register
           </div>
-          </div>
+        </div>
         <div className="col"></div>
       </div>
     </div>

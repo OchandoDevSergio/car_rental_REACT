@@ -1,19 +1,10 @@
 import "./ShowCar.css";
 
-//rdx connection
-
 import { useSelector } from "react-redux";
 import { carDataCheck } from "../carSlice";
-// import { useEffect } from "react";
 export const ShowCar = () => {
-
-  //instanciamos la lectura
+  //Instanciamos REDUX en modo lectura
   const rdxCarData = useSelector(carDataCheck);
-
-
-  // useEffect(()=>{
-  //   console.log(rdxCarData, "limon granizado de malibu");
-  // },[rdxCarData]);
 
   return (
     <div className="container-fluid showCar">
@@ -22,7 +13,11 @@ export const ShowCar = () => {
         <div className="col-2"></div>
         <div className="col carCol">
           <div className="col">
-            <img className="carPicture" src={rdxCarData.carData.picture} alt={rdxCarData.carData.id} />
+            <img
+              className="carPicture"
+              src={rdxCarData.carData.picture}
+              alt={rdxCarData.carData.id}
+            />
           </div>
           <div className="col carData">
             <div>Model : {rdxCarData.carData.model}</div>

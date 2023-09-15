@@ -6,7 +6,6 @@ export const bringCars = async () => {
 
 export const bringUsers = async (userData) => {
   console.log(userData);
-  //console.log("a ver que trae el userdata.token", userData.token);
 
   return await axios.get(`http://localhost:5000/users`, {
     headers: {
@@ -15,13 +14,7 @@ export const bringUsers = async (userData) => {
   });
 };
 
-// export const bringUsers = async (credentials) => {
-
-//     return await axios.get(`http://localhost:5000/users`, credentials);
-// }
-
 export const loginUser = async (credentials) => {
-  //aqui es donde enviamos al backend los datos de logueo desde el frontend
   return await axios.post(`http://localhost:5000/auth/login`, credentials);
 };
 

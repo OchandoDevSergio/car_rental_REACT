@@ -12,42 +12,34 @@ export const Header = () => {
   //Instanciamos useNavigate dentro de navigate para poder navegar
   const navigate = useNavigate();
 
-  //instanciamos la lectura
+  //Instanciamos Redux en modo lectura
   const rdxCarData = useSelector(carDataCheck);
-  const reduxUserData = useSelector(userDataCheck); 
+  const reduxUserData = useSelector(userDataCheck);
   //Instanciamos Redux en modo ESCRITURA
   const dispatch = useDispatch();
 
   const [criteria, setCriteria] = useState("");
-
-  // useEffect(()=>{
-  //     console.log("soy REDUX con el HEADER .... y cambio a.....", reduxUserData.credentials?.userData)
-  // },[reduxUserData]);
 
   const logOut = () => {
     dispatch(userout({ credentials: {} }));
     navigate("/");
   };
 
-  const searchCars = (cars) =>{
-    dispatch(loadCarData({ carData: cars}));
-  }; 
+  const searchCars = (cars) => {
+    dispatch(loadCarData({ carData: cars }));
+  };
 
   const inputHandler = (e) => {
     setCriteria(e.target.value);
   };
 
   useEffect(() => {
-    if(criteria !== ""){
+    if (criteria !== "") {
       searchCriteria(criteria)
-        .then(
-          results => {
-            //console.log("éstos son los resultados de la búsqueda", results);
-            searchCars(results);
-            //console.log("esto es carData", rdxCarData);
-          }
-        )
-        .catch(error => console.log(error));
+        .then((results) => {
+          searchCars(results);
+        })
+        .catch((error) => console.log(error));
     }
   }, [criteria]);
 
@@ -72,7 +64,7 @@ export const Header = () => {
         <>
           <div className="loginRegisterDiv">
             {reduxUserData.credentials.userData.roleId === 1 && (
-              //Este AND haría referencia a un entonces.....
+              //Este && haría referencia a un entonces.....
 
               <div className="buttonClicker" onClick={() => navigate("/admin")}>
                 Admin
