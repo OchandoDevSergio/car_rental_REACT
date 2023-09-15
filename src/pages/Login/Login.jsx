@@ -19,10 +19,6 @@ export const Login = () => {
   //Instancia Redux modo LECTURA
   const dataUserRedux = useSelector(userDataCheck);
 
-  useEffect(() => {
-    console.log(dataUserRedux, "sdfdddd");
-  }, [dataUserRedux]);
-
   //Instancia Redux en modo ESCRITURA
   const dispatch = useDispatch();
 

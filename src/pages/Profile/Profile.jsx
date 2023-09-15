@@ -42,10 +42,6 @@ export const Profile = () => {
     password_repeat: "",
   });
 
-  useEffect(() => {
-    console.log(modifyUserBody, "GONORREAAAAAAAAAAA");
-  }, [modifyUserBody]);
-
   //BINDEO
   const inputHandler = (e) => {
     setModifyUserBody((prevState) => ({
@@ -62,7 +58,7 @@ export const Profile = () => {
   const modifyMe = () => {
     if (modifyUserBody.password == password2.password_repeat) {
       for (let check in modifyUserBody) {
-        console.log(check);
+        
         if (modifyUserBody[check] === "") {
           //Al encontrar un string vacío no dejo continuar, remito al return
           return;

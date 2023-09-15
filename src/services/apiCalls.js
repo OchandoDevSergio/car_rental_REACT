@@ -5,7 +5,6 @@ export const bringCars = async () => {
 };
 
 export const bringUsers = async (userData) => {
-  console.log(userData);
 
   return await axios.get(`http://localhost:5000/users`, {
     headers: {

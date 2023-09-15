@@ -30,7 +30,6 @@ export const NewCar = () => {
   const registerThisCar = () => {
     registerCar(newCarBody, dataUserRedux.credentials)
       .then((resultado) => {
-        console.log(resultado);
         navigate("/");
       })
       .catch((error) => console.log(error));
