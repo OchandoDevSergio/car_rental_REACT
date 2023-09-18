@@ -1,6 +1,7 @@
 # CAR RENTAL - Frontend App - Compañía alquiler de automóviles
+![image](https://i.ibb.co/4VrXmfC/logoCR.jpg)
 
-### Datos generales :paperclip:
+## Datos generales :paperclip:
 **El presente repositorio funciona en conjunto con el repositorio "Car_rental_SEQUELIZE_EXPRESS"
 
 Acceso administrador: 
@@ -9,11 +10,11 @@ Correo: sergmar@mail.com  Contraseña: Bb1234
 Acceso cliente:
 Correo: alcast@mail.com  Contraseña: Aa1234
 
-### Tecnologías y dependencias
+## Tecnologías y dependencias
 [![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=000&style=flat)](https://developer.mozilla.org/en-US/docs/Web/JavaScript) [![HTML5](https://img.shields.io/badge/HTML5-E34F26?logo=html5&logoColor=fff&style=flat)](https://developer.mozilla.org/en-US/docs/Glossary/HTML5) [![CSS3](https://img.shields.io/badge/CSS3-1572B6?logo=css3&logoColor=fff&style=flat)](https://developer.mozilla.org/en-US/docs/Web/CSS) [![NodeJS](https://img.shields.io/badge/Node.js-393?logo=nodedotjs&logoColor=fff&style=flat)](https://developer.mozilla.org/en-US/docs/Web/API/Node) [![NPM](https://img.shields.io/badge/npm-CB3837?logo=npm&logoColor=fff&style=flat)](https://docs.npmjs.com/) [![Bootstrap](https://img.shields.io/badge/Bootstrap-7952B3?logo=bootstrap&logoColor=fff&style=flat)](https://getbootstrap.com/docs/4.1/getting-started/introduction/) [![Axios](https://img.shields.io/badge/Axios-5A29E4?logo=axios&logoColor=fff&style=flat)](https://axios-http.com/docs/intro) [![JWT](https://img.shields.io/badge/JSON%20Web%20Tokens-000?logo=jsonwebtokens&logoColor=fff&style=flat)](https://jwt.io/introduction) [![React](https://img.shields.io/badge/React-61DAFB?logo=react&logoColor=000&style=flat)](https://react.dev/learn) [![Redux](https://img.shields.io/badge/Redux-764ABC?logo=redux&logoColor=fff&style=flat)](https://redux.js.org/introduction/getting-started) [![Git](https://img.shields.io/badge/Git-F05032?logo=git&logoColor=fff&style=flat)](https://developer.mozilla.org/en-US/docs/Glossary/Git)
 
 
-### Indice 
+## Indice 
 
 - [Descripción general del proyecto :speech_balloon:](#descripción-general-del-proyecto)
 
