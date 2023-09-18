@@ -26,13 +26,13 @@ Correo: alcast@mail.com  Contraseña: Aa1234
 
 #
 
-# Descripción general del proyecto
+### Descripción general del proyecto
 
 Propuesto el proyecto de desarrollar una aplicación web para la gestión de una compañía de alquiler de automóviles, el presente repositorio supone la sección frontend del mismo. Esta sección habría de constar de una SPA (single page application), en la que el usuario pueda tener acceso a la información de un catálogo de vehículos albergado en una base de datos a través de la interacción con la sección backend de la misma aplicación. 
 
 Además la aplicación habría de distinguir, con el inicio de sesión, entre un rol de usuario cliente y un rol de administrador, permitiendo en función de esta distinción realizar diferentes cambios en la base de datos.
 
-# Vistas
+### Vistas
 
 -Al entrar en la aplicación nos encontramos con la vista "Home", en la que se nos mostraría a priori un conjunto de tarjetas con datos e imágenes de los vehículos que nutren el catálogo de la base de datos de la aplicación. Sin embargo al realizar una búsqueda de una marca o modelo de automóvil a través del input que alberga el encabezado, esta vista se limitará a mostrar los vehículos que coincidan con los criterios de la búsqueda.
 
