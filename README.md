@@ -35,35 +35,35 @@ Además la aplicación habría de distinguir, con el inicio de sesión, entre un
 
 ### Vistas
 
--Al entrar en la aplicación nos encontramos con la vista "Home", en la que se nos mostraría a priori un conjunto de tarjetas con datos e imágenes de los vehículos que nutren el catálogo de la base de datos de la aplicación. Sin embargo al realizar una búsqueda de una marca o modelo de automóvil a través del input que alberga el encabezado, esta vista se limitará a mostrar los vehículos que coincidan con los criterios de la búsqueda.
+Al entrar en la aplicación nos encontramos con la vista **Home**, en la que se nos mostraría a priori un conjunto de tarjetas con datos e imágenes de los vehículos que nutren el catálogo de la base de datos de la aplicación. Sin embargo al realizar una búsqueda de una marca o modelo de automóvil a través del input que alberga el encabezado, esta vista se limitará a mostrar los vehículos que coincidan con los criterios de la búsqueda.
 
--La vista "Showcar" nos muestra en mayor detalle la imagen y los datos ampliados de un único vehículo seleccionado.
+La vista **Showcar** nos muestra en mayor detalle la imagen y los datos ampliados de un único vehículo seleccionado.
 
--La vista "Register" nos muestra una serie de inputs a trevés de los cuales podremos introducir nuestros datos y registrarnos como usuario en la base de datos de la aplicación.
+La vista **Register** nos muestra una serie de inputs a trevés de los cuales podremos introducir nuestros datos y registrarnos como usuario en la base de datos de la aplicación.
 
--La vista "Login" nos solicita nuestras credenciales de usuarios para iniciar sesión.
+La vista **Login** nos solicita nuestras credenciales de usuarios para iniciar sesión.
 
--La vista "Admin" muestra a los administradores de la aplicación las opciones a las que tienen acceso privilegiado.
+La vista **Admin** muestra a los administradores de la aplicación las opciones a las que tienen acceso privilegiado.
 
--La vista "Newcar" permite a los administradores de la aplicación introducir nuevos vehículos en la base de datos de la misma.
+La vista **Newcar** permite a los administradores de la aplicación introducir nuevos vehículos en la base de datos de la misma.
 
--La vista "Userslist" muestra tarjetas a los administradores con los datos de todos los usuarios registrados en la base de datos (obviando sus passwords).
+La vista **Userslist** muestra tarjetas a los administradores con los datos de todos los usuarios registrados en la base de datos (obviando sus passwords).
 
--La vista "Profile" pemrite al usuario registrado, ya tenga el rol de cliente o el de administrador, cambiar los datos que le constan en la base de datos.
+La vista **Profile** pemrite al usuario registrado, ya tenga el rol de cliente o el de administrador, cambiar los datos que le constan en la base de datos.
 
 ### Funcionamiento
 
-Se accede a la aplicación a través de la vista "Home", que inicialmente realiza una petición a la base de datos de todos los automóviles que constan en ella y os presenta en tarjetas. En el encabezado encontramos un input que nos permite hacer búsquedas de conjuntos de automóviles en función de la coincidencia del script introducido con sus marcas y/o modelos. Además al hacer click sobre alguna tarjeta concreta, los datos del vehículo se inscriben en Redux, se ejecuta la función navigate para cargar la vista "Showcar" en el body y se imprimen los datos del automóvil cargado en Redux en esta nueva vista.
+Se accede a la aplicación a través de la vista "Home", que inicialmente realiza una petición a la base de datos de todos los automóviles que constan en ella y nos los presenta en tarjetas. En el encabezado encontramos un input que nos permite hacer búsquedas de conjuntos de automóviles en función de la coincidencia del script introducido con sus marcas y/o modelos. Además al hacer click sobre alguna tarjeta concreta, los datos del vehículo correspondiente se inscriben en Redux, se ejecuta el método navigate para cargar la vista "Showcar" en el body y se imprimen los datos del automóvil cargado en Redux en esta nueva vista.
 
-En el encabezado también encontramos enlaces que emplean la función navigate para dirigirnos a las vistas "Register" y "Login". 
+En el encabezado también encontramos enlaces que emplean el método navigate para dirigirnos a las vistas "Register" y "Login". 
 
-En la vista "Register" encontramos una serie de inputs en los que introducir los datos de un nuevo usuario para posteriormente, a través de un botón, llevar a cabo una orden post que introduzca esa información en la base de datos, asignándole siempre un rol de cliente para generar un nuevo usuario. 
+En la vista "Register" encontramos una serie de inputs en los que podremos introducir los datos de un nuevo usuario para posteriormente, a través de un botón, llevar a cabo una orden post que introduzca esa información en la base de datos, asignándole siempre un rol de cliente para generar un nuevo usuario. 
 
-En la vista "Login" introducimos los credenciales de usuario para iniciar sesión, la aplicación cambia a partir de este punto el botón en el encabezado para registrarnos, sustituyéndolo por uno con nuestro nombre que nos conduciría a la vista "Profile" y también relaciona las credenciales introducidas con su rol asignado en la base de datos, cargando el token correpondiente en Redux.
+En la vista "Login" introducimos los credenciales de usuario para iniciar sesión, la aplicación cambia a partir de este punto el botón en el encabezado para registrarnos, sustituyéndolo por uno con nuestro nombre que nos conduciría a la vista "Profile" y también relaciona las credenciales introducidas con su rol asignado en la base de datos, cargando el token correspondiente en Redux.
 
 En a vista "Profile" encontramos la posibilidad de cambiar nuestros datos de usuario en la base de datos a través de una orden put.
 
-Si nos registramos con las credenciales de un administrador en el encabezado nos aparecerá un nuevo botón que rezará "Admin", al que podemos pinchar para que nos conduzca a una vista desde la que poder seleccionar entre dos opciones: "Add a new car" que cargaría la vista "Newcar" y "Users list" que cargaría la respectiva lista.
+Si nos registramos con las credenciales de un administrador en el encabezado nos aparecerá un nuevo botón que rezará "Admin", al que podemos pinchar para que nos conduzca a una vista desde la que poder seleccionar entre dos opciones: "Add a new car" que cargaría la vista "Newcar" y "Users list" que cargaría la respectiva vista.
 
 En la vista "Newcar" simplemente encontramos unos inputs en los que recoger los datos para enviar una orden post que añada un nuevo automóvil a la base de datos.
 
