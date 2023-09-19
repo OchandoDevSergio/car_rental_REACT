@@ -20,7 +20,9 @@ Correo: alcast@mail.com  Contraseña: Aa1234
 
 - [Vistas :computer:](#vistas) 
 
-- [Funcionamiento :arrow_forward:](#funcionamiento) 
+- [Funcionamiento :arrow_forward:](#funcionamiento)
+
+- [Errores conocidos :no_entry:](#errores-conocidos) 
 
 - [Recursos alternativos y fuentes :art:](#recursos-alternativos-y-fuentes)  
 
@@ -36,19 +38,37 @@ Además la aplicación habría de distinguir, con el inicio de sesión, entre un
 
 Al entrar en la aplicación nos encontramos con la vista **Home**, en la que se nos mostraría a priori un conjunto de tarjetas con datos e imágenes de los vehículos que nutren el catálogo de la base de datos de la aplicación. Sin embargo al realizar una búsqueda de una marca o modelo de automóvil a través del input que alberga el encabezado, esta vista se limitará a mostrar los vehículos que coincidan con los criterios de la búsqueda.
 
+![home](https://i.ibb.co/9n7ZZZZ/Home-logeado.jpg)
+
+![búsqueda](https://i.ibb.co/VjGb89P/home-b-squeda-logeado.jpg)
+
 La vista **Showcar** nos muestra en mayor detalle la imagen y los datos ampliados de un único vehículo seleccionado.
+
+![showcar](https://i.ibb.co/QjkqWz9/showcar.jpg)
 
 La vista **Register** nos muestra una serie de inputs a trevés de los cuales podremos introducir nuestros datos y registrarnos como usuario en la base de datos de la aplicación.
 
+![register](https://i.ibb.co/18B27ny/register.jpg)
+
 La vista **Login** nos solicita nuestras credenciales de usuarios para iniciar sesión.
+
+![login](https://i.ibb.co/w06TjyK/login.jpg)
 
 La vista **Admin** muestra a los administradores de la aplicación las opciones a las que tienen acceso privilegiado.
 
+![admin](https://i.ibb.co/tK72x4Z/admin.jpg)
+
 La vista **Newcar** permite a los administradores de la aplicación introducir nuevos vehículos en la base de datos de la misma.
+
+![newcar](https://i.ibb.co/SRtsf61/lntroduce-car.jpg)
 
 La vista **Userslist** muestra tarjetas a los administradores con los datos de todos los usuarios registrados en la base de datos (obviando sus passwords).
 
+![userslist](https://i.ibb.co/gRwZTyj/userslist.jpg)
+
 La vista **Profile** pemrite al usuario registrado, ya tenga el rol de cliente o el de administrador, cambiar los datos que le constan en la base de datos.
+
+![profile](https://i.ibb.co/grTgWgh/profile.jpg)
 
 ### Funcionamiento
 
@@ -68,6 +88,11 @@ En la vista "Newcar" simplemente encontramos unos inputs en los que recoger los 
 
 En la vista "Userslist" encontramos los datos del conjunto de los usuarios presentes en la base de datos aportados por una orden get y presentados en tarjetas.
 
+### Errores conocidos
+
+En la vista showcar desaparecen los datos del coche seleccionado de la tarjeta si se introduce algo en el input de búsqueda del header.
+
+
 ### Recursos alternativos y fuentes
 
 https://tutorialmarkdown.com/emojis
@@ -75,3 +100,4 @@ https://tutorialmarkdown.com/emojis
 https://badges.pages.dev/
 
 https://imgbb.com/
+
