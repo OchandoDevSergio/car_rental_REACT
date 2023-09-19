@@ -22,7 +22,6 @@ Correo: alcast@mail.com  Contraseña: Aa1234
 
 - [Funcionamiento :arrow_forward:](#funcionamiento) 
 
-
 - [Recursos alternativos y fuentes :art:](#recursos-alternativos-y-fuentes)  
 
 #
