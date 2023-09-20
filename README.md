@@ -30,9 +30,9 @@ Correo: alcast@mail.com  Contraseña: Aa1234
 
 ### Descripción general del proyecto
 
-Propuesto el proyecto de desarrollar una aplicación web para la gestión de una compañía de alquiler de automóviles, el presente repositorio supone la sección frontend del mismo. Esta sección habría de constar de una SPA (single page application), en la que el usuario pueda tener acceso a la información de un catálogo de vehículos albergado en una base de datos a través de la interacción con la sección backend de la misma aplicación. 
+Propuesto el proyecto de desarrollar una aplicación web para la gestión de una compañía de alquiler de automóviles, el presente repositorio supone la sección frontend del mismo. Esta sección habría de constar de una *SPA* (single page application), en la que el usuario pueda tener acceso a la información de un catálogo de vehículos albergado en una base de datos a través de la interacción con la sección backend de la misma aplicación. 
 
-Además la aplicación habría de distinguir, con el inicio de sesión, entre un rol de usuario cliente y un rol de administrador, permitiendo en función de esta distinción realizar diferentes cambios en la base de datos.
+Además la aplicación habría de distinguir, con el inicio de sesión, entre un *rol de usuario* cliente y un rol de administrador, permitiendo en función de esta distinción realizar diferentes cambios en la base de datos.
 
 ### Vistas
 
@@ -72,21 +72,21 @@ La vista **Profile** pemrite al usuario registrado, ya tenga el rol de cliente o
 
 ### Funcionamiento
 
-Se accede a la aplicación a través de la vista "Home", que inicialmente realiza una petición a la base de datos de todos los automóviles que constan en ella y nos los presenta en tarjetas. En el encabezado encontramos un input que nos permite hacer búsquedas de conjuntos de automóviles en función de la coincidencia del script introducido con sus marcas y/o modelos. Además al hacer click sobre alguna tarjeta concreta, los datos del vehículo correspondiente se inscriben en Redux, se ejecuta el método navigate para cargar la vista "Showcar" en el body y se imprimen los datos del automóvil cargado en Redux en esta nueva vista.
+Se accede a la aplicación a través de la vista "Home", que inicialmente realiza una petición a la base de datos de todos los automóviles que constan en ella y nos los presenta en tarjetas. En el encabezado encontramos un input que nos permite hacer *búsquedas* de conjuntos de automóviles en función de la coincidencia del script introducido con sus marcas y/o modelos, aplicando un *debounce vanilla* para no realizar una búsqueda de cada letra. Además al hacer click sobre alguna tarjeta concreta, los datos del vehículo correspondiente se inscriben en *Redux*, se ejecuta el *método navigate* para cargar la vista "Showcar" en el body y se imprimen los datos del automóvil cargado en Redux en esta nueva vista.
 
-En el encabezado también encontramos enlaces que emplean el método navigate para dirigirnos a las vistas "Register" y "Login". 
+En el encabezado también encontramos enlaces que emplean el método navigate para dirigirnos a las vistas "Register" y "Login".  
 
-En la vista "Register" encontramos una serie de inputs en los que podremos introducir los datos de un nuevo usuario para posteriormente, a través de un botón, llevar a cabo una orden post que introduzca esa información en la base de datos, asignándole siempre un rol de cliente para generar un nuevo usuario. 
+En la vista "Register" encontramos una serie de inputs en los que podremos introducir los datos de un nuevo usuario para posteriormente, a través de un botón, llevar a cabo una orden *post* que introduzca esa información en la base de datos, asignándole siempre un rol de cliente para generar un nuevo usuario. 
 
-En la vista "Login" introducimos los credenciales de usuario para iniciar sesión, la aplicación cambia a partir de este punto el botón en el encabezado para registrarnos, sustituyéndolo por uno con nuestro nombre que nos conduciría a la vista "Profile" y también relaciona las credenciales introducidas con su rol asignado en la base de datos, cargando el token correspondiente en Redux.
+En la vista "Login" introducimos los credenciales de usuario para iniciar sesión, la aplicación cambia a partir de este punto el botón en el encabezado para registrarnos, sustituyéndolo por uno con nuestro nombre que nos conduciría a la vista "Profile" y también relaciona las credenciales introducidas con su rol asignado en la base de datos, cargando el *token* correspondiente en Redux.
 
-En a vista "Profile" encontramos la posibilidad de cambiar nuestros datos de usuario en la base de datos a través de una orden put.
+En a vista "Profile" encontramos la posibilidad de cambiar nuestros datos de usuario en la base de datos a través de una orden *put*.
 
 Si nos registramos con las credenciales de un administrador en el encabezado nos aparecerá un nuevo botón que rezará "Admin", al que podemos pinchar para que nos conduzca a una vista desde la que poder seleccionar entre dos opciones: "Add a new car" que cargaría la vista "Newcar" y "Users list" que cargaría la respectiva vista.
 
 En la vista "Newcar" simplemente encontramos unos inputs en los que recoger los datos para enviar una orden post que añada un nuevo automóvil a la base de datos.
 
-En la vista "Userslist" encontramos los datos del conjunto de los usuarios presentes en la base de datos aportados por una orden get y presentados en tarjetas.
+En la vista "Userslist" encontramos los datos del conjunto de los usuarios presentes en la base de datos aportados por una orden *get* y presentados en tarjetas.
 
 ### Errores conocidos
 

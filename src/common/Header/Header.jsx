@@ -34,14 +34,43 @@ export const Header = () => {
   };
 
   useEffect(() => {
+    //console.log("soy criteria", criteria);
     if (criteria !== "") {
+      const search = setTimeout(() => {
+        searchCriteria(criteria)
+          .then((results) => {
+            searchCars(results);
+            console.log(results);
+          })
+          .catch((error) => console.log(error));
+      }, 375);
+
+      return () => clearTimeout(search);
+    } else if (criteria == ""){
       searchCriteria(criteria)
-        .then((results) => {
-          searchCars(results);
-        })
-        .catch((error) => console.log(error));
+      .then((results) => {
+        searchCars(results);})
     }
   }, [criteria]);
+
+  // useEffect(() => {
+  //   if (criteria !== "") {
+  //     const traer = setTimeout(() => {
+  //       bringMovies(criteria)
+  //         .then((searchResults) => {
+  //           console.log(searchResults)
+  //           setMovies(searchResults.data.results);
+  //         })
+  //         .catch((error) => console.log(error));
+  //     }, 375);
+
+  //     return () => clearTimeout(traer);
+  //   } else {
+  //     if (movies.length !== 0) {
+  //       setMovies([]);
+  //     }
+  //   }
+  // }, [criteria]);
 
   return (
     <div className="header">
