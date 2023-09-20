@@ -92,6 +92,7 @@ En la vista "Userslist" encontramos los datos del conjunto de los usuarios prese
 
 En la vista showcar desaparecen los datos del coche seleccionado de la tarjeta si se introduce algo en el input de búsqueda del header.
 
+Si para iniciar sesión introducimos unas credenciales incorrectas no indica nada, simplemente no se inicia sesión.
 
 ### Recursos alternativos y fuentes
 
