@@ -45,7 +45,10 @@ export const Register = () => {
     } else {
       console.log("los passwords no coinciden");
     }
-  };
+
+
+
+    };
 
   const datosReduxUser = useSelector(userDataCheck);
   const navigate = useNavigate();
@@ -66,6 +69,7 @@ export const Register = () => {
             <Input
               type={"text"}
               placeholder="Introduce your name"
+              value={registerBody.name}
               name={"name"}
               className="defaultInput"
               manejadora={inputHandler}
@@ -75,6 +79,7 @@ export const Register = () => {
             <Input
               type={"text"}
               placeholder="Introduce your surnames"
+              value={registerBody.surnames}
               name={"surnames"}
               className="defaultInput"
               manejadora={inputHandler}
@@ -84,6 +89,7 @@ export const Register = () => {
             <Input
               type={"text"}
               placeholder="Introduce your DNI"
+              value={registerBody.dni}
               name={"dni"}
               className="defaultInput"
               manejadora={inputHandler}
@@ -93,6 +99,7 @@ export const Register = () => {
             <Input
               type={"email"}
               placeholder="Introduce your e-mail"
+              value={registerBody.email}
               name={"email"}
               className="defaultInput"
               manejadora={inputHandler}
@@ -104,6 +111,7 @@ export const Register = () => {
             <Input
               type={"number"}
               placeholder="Introduce your phone number"
+              value={registerBody.phone}
               name={"phone"}
               className="defaultInput"
               manejadora={inputHandler}
@@ -113,6 +121,7 @@ export const Register = () => {
             <Input
               type={"password"}
               placeholder="Introduce your password"
+              value={registerBody.password}
               name={"password"}
               className="defaultInput"
               manejadora={inputHandler}
@@ -122,6 +131,7 @@ export const Register = () => {
             <Input
               type={"password"}
               placeholder="Repeat your password"
+              value={registerBody.password_repeat}
               name={"password_repeat"}
               className="defaultInput"
               manejadora={inputHandler}
