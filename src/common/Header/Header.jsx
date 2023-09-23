@@ -13,7 +13,7 @@ export const Header = () => {
   const navigate = useNavigate();
 
   //Instanciamos Redux en modo lectura
-  const rdxCarData = useSelector(carDataCheck);
+  //const rdxCarData = useSelector(carDataCheck);
   const reduxUserData = useSelector(userDataCheck);
   //Instanciamos Redux en modo ESCRITURA
   const dispatch = useDispatch();
@@ -83,7 +83,7 @@ export const Header = () => {
       <div className="spaceDivHeader"></div>
       <Input
         type={"text"}
-        placeholder="Search cars by brand"
+        placeholder="Search cars by brand or model"
         value={criteria}
         name={"criteria"}
         className="defaultInput"
