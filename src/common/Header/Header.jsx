@@ -7,7 +7,7 @@ import { useEffect, useState } from "react";
 import { Input } from "../Input/Input";
 import { searchCriteria } from "../../services/apiCalls";
 import { loadCarData } from "../../pages/carSlice";
-import { carDataCheck } from "../../pages/carSlice";
+//import { carDataCheck } from "../../pages/designSlice";
 export const Header = () => {
   //Instanciamos useNavigate dentro de navigate para poder navegar
   const navigate = useNavigate();
